@@ -21,14 +21,16 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'cloudflare-pages',
-    compatibilityDate: '2025-07-15'
+    compatibilityDate: '2025-07-15',
+    prerender: {
+      routes: ['/']
+    }
   },
 
   content: {
-    // Use better-sqlite3 during build, D1 at runtime
+    // Use better-sqlite3 for content processing
     database: {
-      provider: process.env.CF_PAGES ? 'd1' : 'sqlite',
-      binding: 'DB'
+      provider: 'sqlite'
     }
   }
 
