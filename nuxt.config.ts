@@ -25,8 +25,9 @@ export default defineNuxtConfig({
   },
 
   content: {
+    // Use better-sqlite3 during build, D1 at runtime
     database: {
-      adapter: 'cloudflare-d1',
+      provider: process.env.CF_PAGES ? 'd1' : 'sqlite',
       binding: 'DB'
     }
   }
