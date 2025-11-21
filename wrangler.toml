@@ -1,0 +1,10 @@
+name = "surveying-engineer"
+compatibility_date = "2025-07-15"
+
+pages_build_output_dir = ".output/public"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "surveying-engineer-db"
+# database_id will be set automatically by Cloudflare Pages when you link a D1 database
+

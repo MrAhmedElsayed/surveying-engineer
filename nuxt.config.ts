@@ -19,8 +19,16 @@ export default defineNuxtConfig({
     '@nuxt/hints'
   ],
 
+  nitro: {
+    preset: 'cloudflare-pages',
+    compatibilityDate: '2025-07-15'
+  },
+
   content: {
-    // Options
+    database: {
+      adapter: 'cloudflare-d1',
+      binding: 'DB'
+    }
   }
 
 })
