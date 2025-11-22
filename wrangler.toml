@@ -3,3 +3,10 @@ compatibility_date = "2025-07-15"
 
 pages_build_output_dir = ".output/public"
 
+# D1 database binding for Nuxt Content
+# Get the database_id from Cloudflare Dashboard → Workers & Pages → D1 → Your database
+[[d1_databases]]
+binding = "DB"
+database_name = "surveying-engineer-content"
+database_id = "12929317-3a4d-4196-9076-e851211f903a"  # Replace with your actual database ID from Cloudflare Dashboard
+

@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   ],
 
   nitro: {
-    preset: 'cloudflare-pages',
+    preset: 'cloudflare_pages',
     compatibilityDate: '2025-07-15',
     prerender: {
       routes: ['/']
@@ -28,9 +28,11 @@ export default defineNuxtConfig({
   },
 
   content: {
-    // Use better-sqlite3 for content processing
+    // D1 database will be used automatically on Cloudflare Pages
+    // better-sqlite3 will be used during local development and build
     database: {
-      provider: 'sqlite'
+      provider: process.env.CF_PAGES ? 'd1' : 'sqlite',
+      binding: 'DB'
     }
   }
 
