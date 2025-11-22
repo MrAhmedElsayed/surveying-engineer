@@ -1,4 +1,4 @@
-name = "surveying-engineer"
+name = "survey-platform"
 compatibility_date = "2025-07-15"
 
 # D1 database binding for Nuxt Content
