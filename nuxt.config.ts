@@ -28,8 +28,12 @@ export default defineNuxtConfig({
   },
 
   content: {
-    // D1 database will be used automatically on Cloudflare Pages
-    // better-sqlite3 will be used during local development and build
+    // Why we need better-sqlite3:
+    // - During BUILD: Nuxt Content processes your markdown files and needs a database
+    //   to index/store content metadata. This happens during 'npm run build' on Cloudflare.
+    //   better-sqlite3 is used here because D1 is not available during the build process.
+    // - At RUNTIME: When your app runs on Cloudflare Pages, it uses D1 database (Cloudflare's SQLite)
+    //   via the 'DB' binding to query content.
     database: {
       provider: process.env.CF_PAGES ? 'd1' : 'sqlite',
       binding: 'DB'

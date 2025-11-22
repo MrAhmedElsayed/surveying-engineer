@@ -113,8 +113,8 @@ Follow the [official Nuxt Content documentation](https://content.nuxt.com/docs/d
 
 1. **Connect your repository** to Cloudflare Pages
 2. **Build settings:**
-   - **Build command:** `npm run build`
-   - **Build output directory:** `.output/public`
+   - **Build command:** `npx nuxi build --preset=cloudflare_pages`
+   - **Build output directory:** `dist`
    - **Root directory:** `/` (leave empty)
    - **Node.js version:** `22` (or latest)
 
@@ -133,10 +133,10 @@ If you want to deploy manually from your local machine:
 
 ```bash
 # Build the project
-npm run build
+npx nuxi build --preset=cloudflare_pages
 
 # Deploy to Cloudflare Pages
-npx wrangler pages deploy .output/public
+npx wrangler pages deploy dist
 ```
 
 **Note:** Make sure you have the D1 database created and linked to your Pages project with the `DB` binding name before deploying.
