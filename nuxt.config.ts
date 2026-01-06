@@ -1,9 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/image", "@nuxt/ui", '@nuxt/content', '@vueuse/nuxt', 'nuxt-og-image', "nitro-cloudflare-dev"],
+  modules: ["nitro-cloudflare-dev", "@nuxt/eslint", "@nuxt/image", "@nuxt/ui", '@nuxt/content', '@vueuse/nuxt', 'nuxt-og-image', ],
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  // content: {
+  //   database: {
+  //     type: 'd1',
+  //     bindingName: 'DB'
+  //   }
+  // },
   routeRules: {
     '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
